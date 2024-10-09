@@ -448,7 +448,9 @@ section {
 
     .list .item .content{
         left: 50px;
+        width: 70%;
     }
+    
 
     .content .title, .content .name{
         font-size: 70px;
