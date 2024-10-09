@@ -348,8 +348,7 @@ section {
     border-style: none;
 }
 .content .btn button:nth-child(1):hover{
-    scale: 1.05;
-    background: black;
+    background: #22222299;
 }
 
 .content .btn a {
@@ -385,20 +384,20 @@ section {
 .arrows{
     position: absolute;
     top: 80%;
-    right: 52%;
+    left: 7.5%;
     z-index: 100;
     width: 300px;
     max-width: 30%;
     display: flex;
     gap: 10px;
     align-items: center;
+
 }
 
 .arrows button{
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    background-color: #141414;
+    background-color: #22222299;
     color: #fff;
     border: none;
     outline: none;
@@ -407,6 +406,7 @@ section {
     font-weight: bold;
     transition: .5s;
     cursor: pointer;
+    backdrop-filter: blur(10px);
 }
 
 .arrows button:hover{
@@ -451,6 +451,9 @@ section {
         width: 70%;
     }
     
+    .arrows {
+        left: 15%;
+    }
 
     .content .title, .content .name{
         font-size: 70px;
