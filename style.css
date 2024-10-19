@@ -112,6 +112,10 @@ section {
 .explore {
     color: rgba(0, 0, 0, .7);
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
 }
 
 .button {
@@ -120,6 +124,7 @@ section {
     border: none;
     color: rgba(255, 255, 255, .9);
     padding: 10px;
+    margin-left: 5px;
     padding-left: 15px;
     padding-right: 15px;
     text-decoration: none;
