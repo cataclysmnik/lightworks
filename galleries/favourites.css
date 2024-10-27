@@ -102,7 +102,7 @@ section {
     align-items: center;
     gap: 16px;
     margin-top: 10%;
-    color: #fff;
+    color: #ccc;
     
 }
 
@@ -209,6 +209,7 @@ img {
         columns: 1;
         margin-left: 5%;
         margin-top: 20%;
+        font-size: .8rem;
     }
     .logo {
         font-size: 1rem;
