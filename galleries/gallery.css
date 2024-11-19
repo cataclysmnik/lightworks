@@ -119,7 +119,6 @@ section {
 }
 
 #myBtn {
-    display: none;
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -132,12 +131,20 @@ section {
     cursor: pointer;
     padding: 8px 12px;
     font-size: 24px;
-    transition: .2s;
-  }
-  
-  #myBtn:hover {
-    background-color: #222; /* Add a dark-grey background on hover */
-  }
+    transition: opacity 0.2s ease, visibility 0.3s ease, background-color 0.2s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#myBtn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#myBtn:hover {
+    background-color: #222;
+}
+
 
 /*BREAKPOINTS*/
 

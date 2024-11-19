@@ -6,9 +6,9 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    mybutton.style.display = "block";
+    mybutton.classList.add("show");
   } else {
-    mybutton.style.display = "none";
+    mybutton.classList.remove("show");
   }
 }
 
