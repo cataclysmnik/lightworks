@@ -19,3 +19,4 @@ function topFunction() {
     behavior: "smooth" // Enables smooth scrolling
   });
 }
+
