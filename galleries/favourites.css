@@ -145,7 +145,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: 70%;
+    width: 50%;
     margin-bottom: 10px;
     break-inside: avoid;
 }
