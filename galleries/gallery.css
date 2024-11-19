@@ -118,6 +118,26 @@ section {
     scale: 1.05;
 }
 
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #33333399;
+    backdrop-filter: blur(16px);
+    color: white;
+    cursor: pointer;
+    padding: 8px 12px;
+    font-size: 24px;
+    transition: .2s;
+  }
+  
+  #myBtn:hover {
+    background-color: #222; /* Add a dark-grey background on hover */
+  }
 
 /*BREAKPOINTS*/
 
@@ -208,6 +228,7 @@ section {
     .logo {
         font-size: 1.3rem;
     }
+
 }
 
 @media (max-width:480px) {
@@ -217,6 +238,9 @@ section {
     }
     .logo {
         font-size: 1rem;
+    }
+    #mybtn {
+        bottom: 100px;
     }
 }
 
