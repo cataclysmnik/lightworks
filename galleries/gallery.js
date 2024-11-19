@@ -20,3 +20,23 @@ function topFunction() {
   });
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll("img");
+  let loadedImages = 0;
+
+  images.forEach((img) => {
+      // Attach load event to each image
+      img.onload = () => {
+          loadedImages++;
+          // Check if all images are loaded
+          if (loadedImages === images.length) {
+              document.getElementById("loading-screen").style.display = "none";
+          }
+      };
+
+      // For cached images
+      if (img.complete) {
+          img.onload();
+      }
+  });
+});
