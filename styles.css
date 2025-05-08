@@ -3,9 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Space Mono", monospace;
     background-color: #e3e3db;
 }
 
@@ -94,6 +93,7 @@ nav{
 
 
 .header {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -115,6 +115,7 @@ nav{
     text-transform: uppercase;
     font-size: 7vw;
     line-height: 0.85;
+    font-weight: 900;
     letter-spacing: -.075rem;
     color: #ffffffc9;
     
@@ -142,6 +143,12 @@ nav{
 .char.anim-out h1 {
     position: relative;
     will-change: transform;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 100;
 }
 
 .header h1,

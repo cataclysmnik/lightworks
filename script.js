@@ -2,6 +2,7 @@ gsap.registerPlugin(CustomEase);
 
 const customEase = CustomEase.create("custom", ".87,0,.13,1");
 const counter = document.getElementById("counter");
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 gsap.set(".video-container", {
     scale: 0,
@@ -72,7 +73,7 @@ gsap.to(".hero", {
                 });
 
                 gsap.to(".char.anim-in h1", {
-                    x: "-2000%",
+                    x: "-900%",
                     duration: 2,
                     ease: customEase,
                     delay: 2.5,
@@ -95,4 +96,24 @@ gsap.to([".header span", ".coordinates span"], {
     stagger: 0.125,
     ease: "power3.out",
     delay: 5.75,
+});
+
+document.querySelectorAll("a").forEach(link => {
+    link.onmouseover = event => {
+        let iterations = 0;
+        const interval = setInterval(() => {
+            event.target.innerText = event.target.innerText.split("")
+                .map((letter, index) => {
+                    if (index < iterations) {
+                        return event.target.dataset.value[index];
+                    }
+                    return letters[Math.floor(Math.random() * 26)]
+                })
+                .join("");
+            if (iterations >= event.target.dataset.value.length) {
+                clearInterval(interval);
+            }
+            iterations += 1 / 3;
+        }, 30);
+    }
 });
