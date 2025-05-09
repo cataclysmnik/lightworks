@@ -98,7 +98,8 @@ gsap.to([".header span", ".coordinates span"], {
     delay: 5.75,
 });
 
-document.querySelectorAll("a").forEach(link => {
+// Update the link hover effect
+document.querySelectorAll('a[data-value]').forEach(link => {
     link.onmouseover = event => {
         let iterations = 0;
         const interval = setInterval(() => {
@@ -136,17 +137,27 @@ ScrollTrigger.create({
         const galleryWrapper = document.querySelector(".gallery-wrapper");
         const sideCols = document.querySelectorAll(".col:not(.main)");
         const mainImg = document.querySelector(".img.main img");
+        const imageContent = document.querySelector(".image-content");
 
         const scale = 1 + self.progress * 2.65;
         const yTranslate = self.progress * 300;
         const mainImgScale = 2 - self.progress * 0.85;
 
+        // Calculate opacity based on progress
+        const contentOpacity = Math.max(0, (self.progress - 0.7) * 3); // Starts fading in at 70% progress
+
         galleryWrapper.style.transform = `translate(-50%, -50%) scale(${scale})`;
 
         sideCols.forEach((col) => {
             col.style.transform = `translateY(${yTranslate}px)`;
-        })
+        });
 
         mainImg.style.transform = `scale(${mainImgScale})`;
+
+        // Apply opacity to content
+        if (imageContent) {
+            imageContent.style.opacity = contentOpacity;
+            imageContent.style.transform = `translate(-50%, -50%) scale(${1 + (1 - contentOpacity) * 0.2})`;
+        }
     },
 })
