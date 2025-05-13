@@ -1,11 +1,15 @@
 import slides from "./slides.js";
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(CustomEase, ScrollTrigger);
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     let activeSlideIndex = 0;
     let previousProgress = 0;
     let isAnimatingSlide = false;
     let triggerDestroyed = false;
+
+    const customEase = CustomEase.create("custom", ".87,0,.13,1");
 
     const lenis = new Lenis();
     lenis.on("scroll", ScrollTrigger.update);
@@ -24,14 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateProgressBars(progress) {
         const progressBars = document.querySelectorAll(".progress-bar");
         progressBars.forEach((bar, index) => {
-            const barProgress = Math.min(Math.max(progress * 5 - index, 0), 1);
+            const barProgress = Math.min(Math.max(progress * 11 - index, 0), 1);
             bar.style.setProperty('--progress', barProgress);
         });
     }
 
     function initMarqueeAnimation(h1Element) {
         const text = h1Element.textContent;
-        h1Element.textContent = text + " " + text + " " + text;
+        h1Element.textContent = text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text;
 
         gsap.to(h1Element, {
             x: "-33.33%",
@@ -206,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const isScrollingForward = progress > previousProgress;
-            const targetSlideIndex = Math.min(Math.floor(progress * 5), 4);
+            const targetSlideIndex = Math.min(Math.floor(progress * 11), 10);
 
             if (targetSlideIndex !== activeSlideIndex) {
                 isAnimatingSlide = true;
@@ -225,4 +229,37 @@ document.addEventListener("DOMContentLoaded", () => {
             triggerDestroyed = true;
         },
     });
+
+    // gsap.to(".navbar", {
+    //     clipPath: ("polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%"),
+    //     duration: 1,
+    //     ease: customEase,
+    //     delay: 5,
+    //     onStart: () => {
+    //         gsap.to(".logo", {
+    //             left: "0%",
+    //             transform: "translateX(0%)",
+    //             duration: 1.25,
+    //             ease: customEase,
+
+    //             onStart: () => {
+    //                 gsap.to(".char.anim-out h1", {
+    //                     y: "100%",
+    //                     duration: 3,
+    //                     stagger: -0.1,
+    //                     ease: customEase,
+    //                     delay: 1.5
+    //                 });
+
+    //                 gsap.to(".char.anim-in h1", {
+    //                     x: "-50%",
+    //                     duration: 2,
+    //                     ease: customEase,
+    //                     delay: 2.5,
+    //                 });
+    //             },
+    //         });
+    //     },
+
+    // });
 });

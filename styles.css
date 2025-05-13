@@ -18,7 +18,7 @@
 }
 body {
     font-family: "Space Mono", monospace;
-    height: 1000vh;
+    height: 800vh;
     background-color: #e3e3db;
 }
 
@@ -142,7 +142,8 @@ nav{
 
 .header p {
     margin-top: 1em;
-    color: #cdfcff
+    font-family: monospace;
+    color: #7da1b3;
 }
 
 
@@ -182,6 +183,7 @@ nav{
     transform: translateY(100%);
     will-change: transform;
 }
+
 
 img {
     width: 100%;
@@ -259,21 +261,24 @@ img {
 }
 
 .image-content p {
-    font-size: 1rem;
+    font-size: .5rem;
     margin-bottom: 2rem;
     max-width: 400px;
     margin: 0 auto 2rem;
+    /* font-family: Impact, sans-serif; */
+    letter-spacing: -.5px;
+    font-weight: 100;
 }
 
 .explore-link {
     display: inline-block;
     color: white;
     text-decoration: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.25rem .75rem;
     border: 1px solid white;
     transition: all 0.3s ease;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: .75rem;
     letter-spacing: 1px;
     position: relative;
     overflow: hidden;
@@ -301,12 +306,20 @@ section {
 .intro {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
     padding: 4em 0;
     background-color: #e1dedc;
     color: #05364c;
+}
+
+.intro p {
+    padding: 1em;
+}
+
+.tagline {
+    padding: 20em;
 }
 
 .divider {
@@ -327,11 +340,21 @@ section.ws{
 
 .outro {
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     background-color: #e1dedc;
+    color: #05364c;
+}
+
+.outro p {
+    padding: 1em 20em;
+}
+
+.outro a {
+    text-decoration: none;
     color: #05364c;
 }
 

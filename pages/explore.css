@@ -3,17 +3,25 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
 }
 
 body {
-    font-family: monospace;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    overflow-x: hidden;
 }
 
 h1 {
     position: relative;
     color: white;
     font-size: 10rem;
-    font-weight: 700;
+    font-weight: 100;
     letter-spacing: -0.4rem;
     line-height: 1.5;
     will-change: transform;
@@ -25,6 +33,7 @@ p {
     font-weight: 500;
     letter-spacing: -.04rem;
     line-height: 1;
+    font-family: monospace;
 }
 
 a {
@@ -47,25 +56,30 @@ nav {
     top: 0;
     left: 0;
     width: 100vw;
-    padding: 2em 4em;
+    padding: 1em 1em;
     display: flex;
     justify-content: space-between;
     z-index: 2;
 }
 
-.nav-items {
+.logo {
+    position: absolute;
+    top: 0;
+    padding: 1em 1em;
     display: flex;
-    gap: 1em;
+    will-change: transform;
+    color: #fff;
+    mix-blend-mode: difference;
+    z-index: 2;
+    flex-direction: row;
+    
 }
 
-.nav-items a {
-    font-size: 1rem;
-}
-
-.logo a {
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: -0.06rem;
+.char h1 {
+    font-size: 1vw;
+    font-family: monospace;
+    letter-spacing: normal;
+    mix-blend-mode: difference;
 }
 
 section {
