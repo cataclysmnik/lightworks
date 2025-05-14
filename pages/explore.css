@@ -132,7 +132,16 @@ section {
 }
 
 .marquee-container {
-    width: 1000%;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-container h1 {
+    display: inline-block;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .carousel-progress {

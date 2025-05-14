@@ -34,15 +34,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function initMarqueeAnimation(h1Element) {
+        // Create enough repetitions to ensure seamless loop
         const text = h1Element.textContent;
-        h1Element.textContent = text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text + " | " + text;
+        const repetitions = Math.ceil(window.innerWidth / (text.length * 40)) + 1; // Adjust 40 based on font size
+        const repeatedText = Array(repetitions).fill(text).join(" | ");
+        h1Element.textContent = repeatedText;
+
+        // Calculate duration based on text length
+        const duration = repeatedText.length * 0.15; // Adjust speed multiplier as needed
 
         gsap.to(h1Element, {
-            x: "-33.33%",
-            duration: 10,
-            ease: "linear",
+            x: `-${100 / repetitions}%`,
+            duration: duration,
+            ease: "none",
             repeat: -1,
-            rotation: 0.01,
+            onRepeat: () => {
+                gsap.set(h1Element, { x: "0%" });
+            }
         });
     }
 
