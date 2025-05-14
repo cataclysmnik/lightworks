@@ -2,6 +2,7 @@ const slides = [
     {
         tag: "Mountainscapes",
         marquee: "Himachal Pradesh",
+        link: "./sleigh.html",
         image: "../assets/images/img16.jpg",
     },
     {

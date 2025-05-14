@@ -229,37 +229,4 @@ document.addEventListener("DOMContentLoaded", () => {
             triggerDestroyed = true;
         },
     });
-
-    // gsap.to(".navbar", {
-    //     clipPath: ("polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%"),
-    //     duration: 1,
-    //     ease: customEase,
-    //     delay: 5,
-    //     onStart: () => {
-    //         gsap.to(".logo", {
-    //             left: "0%",
-    //             transform: "translateX(0%)",
-    //             duration: 1.25,
-    //             ease: customEase,
-
-    //             onStart: () => {
-    //                 gsap.to(".char.anim-out h1", {
-    //                     y: "100%",
-    //                     duration: 3,
-    //                     stagger: -0.1,
-    //                     ease: customEase,
-    //                     delay: 1.5
-    //                 });
-
-    //                 gsap.to(".char.anim-in h1", {
-    //                     x: "-50%",
-    //                     duration: 2,
-    //                     ease: customEase,
-    //                     delay: 2.5,
-    //                 });
-    //             },
-    //         });
-    //     },
-
-    // });
 });
