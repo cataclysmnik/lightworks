@@ -8,11 +8,13 @@ const slides = [
     {
         tag: "Mountainscapes",
         marquee: "Kashmir",
+        link: "./kashmir.html",
         image: "../assets/images/img16.jpg",
     },
     {
         tag: "Mountainscapes",
         marquee: "Arunachal Pradesh",
+        link: "./arunachal.html",
         image: "../assets/images/img16.jpg",
     },
     {
