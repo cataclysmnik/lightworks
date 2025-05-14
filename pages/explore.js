@@ -88,6 +88,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         initMarqueeAnimation(newSlide.querySelector(".marquee-container h1"));
 
+        const marqueeLink = newSlide.querySelector('.marquee-link');
+        const backgroundImg = newSlide.querySelector('.slide-img img');
+
+        marqueeLink.addEventListener('mouseenter', () => {
+            gsap.to(backgroundImg, {
+                scale: 1.05,
+                duration: 0.4,
+                ease: customEase
+            });
+        });
+
+        marqueeLink.addEventListener('mouseleave', () => {
+            gsap.to(backgroundImg, {
+                scale: 1,
+                duration: 0.8,
+                ease: customEase
+            });
+        });
+
         const currentSlideImg = currentSlide.querySelector(".slide-img");
         const currentSlideCopy = currentSlide.querySelector(".slide-copy");
 
