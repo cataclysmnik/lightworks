@@ -70,7 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div class="slide-marquee">
                     <div class="marquee-container">
-                        <h1>${slideData.marquee}</h1>
+                        <a href="${slideData.link}" class="marquee-link">
+                            <h1>${slideData.marquee}</h1>
+                        </a>
                     </div>
                 </div>
             </div>
