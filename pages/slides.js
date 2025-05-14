@@ -20,6 +20,7 @@ const slides = [
     {
         tag: "Seascapes",
         marquee: "Vishakhapatnam",
+        link: "./vizag.html",
         image: "../assets/images/img16.jpg",
     },
     {
@@ -55,6 +56,7 @@ const slides = [
     {
         tag: "Portraits",
         marquee: "Sleigh The Night",
+        link: "./sleigh.html",
         image: "../assets/images/img16.jpg",
     },
 ];
