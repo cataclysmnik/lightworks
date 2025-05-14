@@ -98,7 +98,6 @@ gsap.to([".header span", ".coordinates span"], {
     delay: 5.75,
 });
 
-// Update the link hover effect
 document.querySelectorAll('a[data-value]').forEach(link => {
     link.onmouseover = event => {
         let iterations = 0;
