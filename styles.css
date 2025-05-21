@@ -366,6 +366,22 @@ section.ws{
     height: 100%;
 }
 
+.word {
+    display: inline-block;
+    position: relative;
+    will-change: transform;
+    cursor: default;
+    transition: color 0.3s ease;
+}
+
+.word:hover {
+    color: #000;
+}
+
+.intro-text, .outro-text {
+    perspective: 1000px;
+}
+
 @media(max-width: 900px) {
     p {
         font-size: 13px;

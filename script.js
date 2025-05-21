@@ -160,3 +160,81 @@ ScrollTrigger.create({
         }
     },
 })
+
+document.addEventListener("DOMContentLoaded", () => {
+    const animateTextElements = (selector, splitBy) => {
+        const textContainers = document.querySelectorAll(selector);
+
+        textContainers.forEach((textContainer) => {
+            const originalText = textContainer.textContent;
+            let elements = [];
+
+            // Split text into words
+            if (splitBy === "words") {
+                elements = originalText.trim().split(/\s+/);
+            }
+
+            // Clear and rebuild the content
+            textContainer.innerHTML = elements
+                .map(element => `<span class="word">${element}</span>`)
+                .join(' ');
+
+            // Get all word spans
+            const words = textContainer.querySelectorAll('.word');
+
+            // Add mouse interaction
+            textContainer.addEventListener("mousemove", (e) => {
+                const rect = textContainer.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+
+                words.forEach((word) => {
+                    const wordRect = word.getBoundingClientRect();
+                    const wordX = wordRect.left - rect.left + wordRect.width / 2;
+                    const wordY = wordRect.top - rect.top + wordRect.height / 2;
+
+                    const distanceX = mouseX - wordX;
+                    const distanceY = mouseY - wordY;
+                    const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+                    const maxDistance = 100;
+
+                    if (distance < maxDistance) {
+                        const force = (1 - distance / maxDistance) * 30;
+                        const moveX = (distanceX / distance) * force;
+                        const moveY = (distanceY / distance) * force;
+
+                        gsap.to(word, {
+                            x: -moveX,
+                            y: -moveY,
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    } else {
+                        gsap.to(word, {
+                            x: 0,
+                            y: 0,
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    }
+                });
+            });
+
+            // Reset position when mouse leaves
+            textContainer.addEventListener("mouseleave", () => {
+                words.forEach(word => {
+                    gsap.to(word, {
+                        x: 0,
+                        y: 0,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                });
+            });
+        });
+    };
+
+    // Initialize the animations
+    animateTextElements(".intro-text", "words");
+    animateTextElements(".outro-text", "words");
+});
